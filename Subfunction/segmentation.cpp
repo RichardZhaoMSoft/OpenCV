@@ -1,5 +1,4 @@
 #include <opencv2/opencv.hpp>
-#include "aidi_vision.h"
 #include <json/json.h>
 #include <string>
 #include <iostream>
@@ -24,7 +23,7 @@ cv::Mat valley_segmentation(cv::Mat src, std::vector<int> valley) {
         start_gray = 40;
         end_gray = 48;
     }
-    //Éú³ÉÒ»ÕÅĞÂµÄroi_garyÍ¼ÓÃÀ´´¦Àí
+    //ç”Ÿæˆä¸€å¼ æ–°çš„roi_garyå›¾ç”¨æ¥å¤„ç†
     for (int i = 0; i < height; i++) {
         for (int j = 500; j < 1500; j++) {
             int gray_value = src.at<uchar>(i, j);
