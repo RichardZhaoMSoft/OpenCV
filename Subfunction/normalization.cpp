@@ -1,5 +1,4 @@
 #include <opencv2/opencv.hpp>
-#include "aidi_vision.h"
 #include <json/json.h>
 #include <string>
 #include <iostream>
@@ -19,7 +18,7 @@ cv::Mat NormalizeImage(cv::Mat img){
             green_Value = pixel.val[1];
             blue_Value = pixel.val[2];
             
-            // ¼ÓÉÏepslon£¬ÎªÁË·ÀÖ¹³ıÒÔ0µÄÇé¿ö·¢Éú
+            // åŠ ä¸Šepslonï¼Œä¸ºäº†é˜²æ­¢é™¤ä»¥0çš„æƒ…å†µå‘ç”Ÿ
             sum_pixel = red_Value + green_Value + blue_Value + epslon;
             red_Value = red_Value / sum_pixel * 255.0;
             blue_Value = blue_Value / sum_pixel * 255.0;
@@ -29,7 +28,7 @@ cv::Mat NormalizeImage(cv::Mat img){
 
         }
     }
-    //4¡¢·µ»Ø¹éÒ»»¯ºóµÄÍ¼Ïñ£»
+    //4ã€è¿”å›å½’ä¸€åŒ–åçš„å›¾åƒï¼›
     return nor_img;
 }
 
