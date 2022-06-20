@@ -1,2 +1,2 @@
-# OpenCV_C-
+# OpenCV_C++
 Tutorial of Opencv(c++ )
