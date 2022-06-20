@@ -1,4 +1,3 @@
-#include "aidi_vision.h"
 #include <opencv2/opencv.hpp>
 #include <json/json.h>
 #include <string>
@@ -6,23 +5,23 @@
 
 typedef std::vector<cv::Point> CONTOUR;
 typedef std::vector<CONTOUR> CONTOURS;
-/** @»æÖÆCONTOURS.
+/** @ç»˜åˆ¶CONTOURS.
 
-Õâ¸öº¯Êý¿ÉÒÔ½«CONTOURSÀïµÄÊý¾Ý»æÖÆÔÚÊäÈëµÄÍ¼Æ¬ÉÏ¡£
+è¿™ä¸ªå‡½æ•°å¯ä»¥å°†CONTOURSé‡Œçš„æ•°æ®ç»˜åˆ¶åœ¨è¾“å…¥çš„å›¾ç‰‡ä¸Šã€‚
 
-Ô­Í¼ÏñÊÇÈÎÒâµÄ£¬ÈýÍ¨µÀµÄÔ­Í¼ÉÏ¿ÉÒÔ»æÖÆ³öÈÎÒâÑÕÉ«µÄÏßÌõ£¬µ«»Ò¶ÈÍ¼ÉÏÖ»ÄÜ»æÖÆ³öºÚ°×»ÒÈýÖÖÑÕÉ«µÄÏßÌõ¡£
+åŽŸå›¾åƒæ˜¯ä»»æ„çš„ï¼Œä¸‰é€šé“çš„åŽŸå›¾ä¸Šå¯ä»¥ç»˜åˆ¶å‡ºä»»æ„é¢œè‰²çš„çº¿æ¡ï¼Œä½†ç°åº¦å›¾ä¸Šåªèƒ½ç»˜åˆ¶å‡ºé»‘ç™½ç°ä¸‰ç§é¢œè‰²çš„çº¿æ¡ã€‚
 
-@CONTOURSµÄÐÎÊ½Îªstd::vector<std::vector<cv::Point>>£¬ÀïÃæ°üº¬ÁËÒ»ÏµÁÐµã£¬ÓëopencvµÄÐÎÊ½ÏàÍ¬¡£
+@CONTOURSçš„å½¢å¼ä¸ºstd::vector<std::vector<cv::Point>>ï¼Œé‡Œé¢åŒ…å«äº†ä¸€ç³»åˆ—ç‚¹ï¼Œä¸Žopencvçš„å½¢å¼ç›¸åŒã€‚
 
-@area_minÊÇÃæ»ýµÄ×îÐ¡Öµ£¬
-    Èç¹û¸ÃÖµ²»Îª0
-        »æÖÆÇúÏß£¬
-        @ÇúÏß
-    ·ñÔò
-        Í¨¹ýcontourAreaº¯Êý»æÖÆ¾ØÐÎ¿ò
-        @¾ØÐÎ¿òÓÐËÄ¸öÊôÐÔ£ºx, y, width, height,·Ö±ð´ú±í×óÉÏ½ÇµãµÄ×ø±êºÍ³¤¿í¡£
+@area_minæ˜¯é¢ç§¯çš„æœ€å°å€¼ï¼Œ
+    å¦‚æžœè¯¥å€¼ä¸ä¸º0
+        ç»˜åˆ¶æ›²çº¿ï¼Œ
+        @æ›²çº¿
+    å¦åˆ™
+        é€šè¿‡contourAreaå‡½æ•°ç»˜åˆ¶çŸ©å½¢æ¡†
+        @çŸ©å½¢æ¡†æœ‰å››ä¸ªå±žæ€§ï¼šx, y, width, height,åˆ†åˆ«ä»£è¡¨å·¦ä¸Šè§’ç‚¹çš„åæ ‡å’Œé•¿å®½ã€‚
  */
-//»­contours
+//ç”»contours
 int draw_contours(cv::Mat src, cv::OutputArray img, CONTOURS contours, int area_min) {
     if (area_min == 0) {
         for (size_t i = 0; i < contours.size(); i++) {
