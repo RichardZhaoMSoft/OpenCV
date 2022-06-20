@@ -1,5 +1,4 @@
 #include <opencv2/opencv.hpp>
-#include "aidi_vision.h"
 #include <json/json.h>
 #include <string>
 #include <iostream>
@@ -28,30 +27,30 @@ std::vector<int> find_valley(cv::Mat mid_hist) {
 
         if (temp_1 == 0 && temp_2 == 0 && temp_3 != 0 && temp_4 != 0) {
             gray_valley.push_back(i);
-            /*std::cout << "情况1-i:" << i << std::endl;
-            std::cout << "情况1-temp_1:" << temp_1 << std::endl;
-            std::cout << "情况1-temp_2:" << temp_2 << std::endl;
-            std::cout << "情况1-temp_3:" << temp_3 << std::endl;
-            std::cout << "情况1-temp_4:" << temp_4 << std::endl;
-            std::cout << "情况1-temp_5:" << temp_5 << std::endl;*/
+            /*std::cout << "脟茅驴枚1-i:" << i << std::endl;
+            std::cout << "脟茅驴枚1-temp_1:" << temp_1 << std::endl;
+            std::cout << "脟茅驴枚1-temp_2:" << temp_2 << std::endl;
+            std::cout << "脟茅驴枚1-temp_3:" << temp_3 << std::endl;
+            std::cout << "脟茅驴枚1-temp_4:" << temp_4 << std::endl;
+            std::cout << "脟茅驴枚1-temp_5:" << temp_5 << std::endl;*/
         }
         else if (temp_2 < temp_1 && temp_3 < temp_2 && temp_3 < temp_4 && temp_4 < temp_5) {
             gray_valley.push_back(i);
-            /*std::cout << "情况2-i:" << i << std::endl;
-            std::cout << "情况2-temp_1:" << temp_1 << std::endl;
-            std::cout << "情况2-temp_2:" << temp_2 << std::endl;
-            std::cout << "情况2-temp_3:" << temp_3 << std::endl;
-            std::cout << "情况2-temp_4:" << temp_4 << std::endl;
-            std::cout << "情况2-temp_5:" << temp_5 << std::endl;*/
+            /*std::cout << "脟茅驴枚2-i:" << i << std::endl;
+            std::cout << "脟茅驴枚2-temp_1:" << temp_1 << std::endl;
+            std::cout << "脟茅驴枚2-temp_2:" << temp_2 << std::endl;
+            std::cout << "脟茅驴枚2-temp_3:" << temp_3 << std::endl;
+            std::cout << "脟茅驴枚2-temp_4:" << temp_4 << std::endl;
+            std::cout << "脟茅驴枚2-temp_5:" << temp_5 << std::endl;*/
         }
         else if (temp_4 == 0 && temp_5 == 0 && temp_3 != 0 && temp_2 != 0) {
             gray_valley.push_back(i);
-            /*std::cout << "情况3-i:" << i << std::endl;
-            std::cout << "情况3-temp_1:" << temp_1 << std::endl;
-            std::cout << "情况3-temp_2:" << temp_2 << std::endl;
-            std::cout << "情况3-temp_3:" << temp_3 << std::endl;
-            std::cout << "情况3-temp_4:" << temp_4 << std::endl;
-            std::cout << "情况3-temp_5:" << temp_5 << std::endl;*/
+            /*std::cout << "脟茅驴枚3-i:" << i << std::endl;
+            std::cout << "脟茅驴枚3-temp_1:" << temp_1 << std::endl;
+            std::cout << "脟茅驴枚3-temp_2:" << temp_2 << std::endl;
+            std::cout << "脟茅驴枚3-temp_3:" << temp_3 << std::endl;
+            std::cout << "脟茅驴枚3-temp_4:" << temp_4 << std::endl;
+            std::cout << "脟茅驴枚3-temp_5:" << temp_5 << std::endl;*/
         }
     }
 
